@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>悅美 - 市心森系宅</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #4a7c2f;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        .contact-section {
+            background: #f0f0f0;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .contact-section h2 {
+            color: #2d5016;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .contact-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item h3 {
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-button-white {
+            display: inline-block;
+            background: white;
+            color: #2d5016;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s ease;
+            border: 2px solid #2d5016;
+        }
+
+        .cta-button-white:hover {
+            background: #2d5016;
+            color: white;
+        }
+
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>悅美</h1>
+        <p>市心森系宅 · 高坪效 2-4 房</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>尋找你的夢想家園</h2>
+            <p>位於市中心的森系建築，享受都市便利與自然舒適</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>🏢 地點優勢</h3>
+                <p>位於市中心，交通便利，鄰近捷運站、購物中心及學校</p>
+            </div>
+            <div class="feature-card">
+                <h3>📐 高坪效設計</h3>
+                <p>2-4房戶型，充分利用空間，每間房間都有自然採光</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌿 森系風格</h3>
+                <p>融合自然元素的室內設計，打造舒適的居住環境</p>
+            </div>
+            <div class="feature-card">
+                <h3>💰 價格合理</h3>
+                <p>提供多種付款方案，購屋優惠及貸款協助</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>立即聯繫我們</h2>
+            <div class="contact-items">
+                <div class="contact-item">
+                    <h3>📞 電話</h3>
+                    <p>02-2428-6611</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 電子郵件</h3>
+                    <p>info@yuemei.com.tw</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 地址</h3>
+                    <p>台北市中心商業區</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🕐 營業時間</h3>
+                    <p>周一至周日 09:00-18:00</p>
+                </div>
+            </div>
+
+            <a href="tel:0224286611" class="cta-button-white">立即預約看房</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>悅美 - 市心森系宅 · 高坪效 2-4 房</p>
+        <p>© 2024 悅美建案。版權所有。</p>
+    </footer>
+</body>
+</html>
