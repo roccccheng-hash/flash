@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>悅美 - 市心森系宅</title>
+    <title>悅美建案 - 市心森系宅 · 高坪效2-4房</title>
     <style>
         * {
             margin: 0;
@@ -12,193 +12,584 @@
         }
 
         body {
-            font-family: 'Microsoft JhengHei', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f9f9f9;
         }
 
         header {
-            background: linear-gradient(135deg, #2d5016 0%, #4a7c2f 100%);
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
             color: white;
-            padding: 2rem;
-            text-align: center;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        main {
+        .header-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=400&fit=crop');
+            background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(45, 80, 22, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="leaves" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M50 20 Q60 30 50 50 Q40 30 50 20" fill="%23a8d5a8" opacity="0.3"/></pattern></defs><rect fill="%2398c98f" width="1200" height="600"/><rect fill="url(%23leaves)" width="1200" height="600"/></svg>');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 4rem 2rem;
-            border-radius: 8px;
+            padding: 100px 20px;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 60px;
         }
 
-        .hero h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 10px;
+            opacity: 0.95;
         }
 
-        .features {
+        .hero-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5252;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #2d5016;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #ff6b6b;
+        }
+
+        .intro-content {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .intro-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
         .feature-card {
-            background: #f9f9f9;
-            padding: 2rem;
+            background: white;
+            padding: 30px;
             border-radius: 8px;
-            border-left: 4px solid #4a7c2f;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
         }
 
         .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
             color: #2d5016;
-            margin-bottom: 0.5rem;
         }
 
         .feature-card p {
             color: #666;
+            font-size: 14px;
         }
 
-        .contact-section {
-            background: #f0f0f0;
-            padding: 3rem 2rem;
+        .highlights {
+            background: white;
+            padding: 40px;
             border-radius: 8px;
-            margin-bottom: 3rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .contact-section h2 {
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .highlight-item {
+            padding: 20px;
+            background: #f0f8f0;
+            border-left: 4px solid #ff6b6b;
+            border-radius: 4px;
+        }
+
+        .highlight-item h4 {
             color: #2d5016;
-            margin-bottom: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .highlight-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .floor-plan {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .floor-plan h3 {
+            font-size: 24px;
+            color: #2d5016;
+            margin-bottom: 20px;
             text-align: center;
         }
 
-        .contact-items {
+        .floor-plan-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .floor-plan-image {
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: #999;
+        }
+
+        .floor-plan-details {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .floor-plan-details ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .floor-plan-details li {
+            padding: 8px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+
+        .floor-plan-details li:last-child {
+            border-bottom: none;
+        }
+
+        .floor-plan-details li::before {
+            content: '✓ ';
+            color: #ff6b6b;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .location-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .location-map {
+            background: #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: #999;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .location-info h3 {
+            font-size: 22px;
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .location-info p {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .location-features {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .location-features li {
+            padding: 8px 0;
+            color: #555;
+        }
+
+        .location-features li::before {
+            content: '📍 ';
+            margin-right: 8px;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .contact-section h2::after {
+            background-color: #ff6b6b;
+        }
+
+        .contact-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
         }
 
         .contact-item h3 {
-            color: #2d5016;
-            margin-bottom: 0.5rem;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .contact-phone {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6b6b;
         }
 
         .cta-button-white {
             display: inline-block;
-            background: white;
+            background-color: white;
             color: #2d5016;
-            padding: 1rem 2rem;
+            padding: 15px 40px;
+            border: none;
             border-radius: 5px;
-            text-decoration: none;
+            font-size: 18px;
             font-weight: bold;
-            text-align: center;
-            transition: background 0.3s ease;
-            border: 2px solid #2d5016;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            margin-top: 20px;
         }
 
         .cta-button-white:hover {
-            background: #2d5016;
-            color: white;
+            background-color: #f0f0f0;
         }
 
         footer {
-            background: #2d5016;
+            background-color: #1a3a0a;
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 30px 20px;
+            margin-top: 60px;
         }
 
         footer p {
-            margin: 0.5rem 0;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            section h2 {
+                font-size: 28px;
+            }
+
+            .floor-plan-content,
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>悅美</h1>
-        <p>市心森系宅 · 高坪效 2-4 房</p>
+        <div class="header-content">
+            <div class="logo">悅美</div>
+            <nav>
+                <a href="#intro">建案介紹</a>
+                <a href="#highlights">特色亮點</a>
+                <a href="#floorplan">格局圖</a>
+                <a href="#location">地理位置</a>
+                <a href="#contact">聯絡我們</a>
+            </nav>
+        </div>
     </header>
 
     <main>
         <section class="hero">
-            <h2>尋找你的夢想家園</h2>
-            <p>位於市中心的森系建築，享受都市便利與自然舒適</p>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <h3>🏢 地點優勢</h3>
-                <p>位於市中心，交通便利，鄰近捷運站、購物中心及學校</p>
-            </div>
-            <div class="feature-card">
-                <h3>📐 高坪效設計</h3>
-                <p>2-4房戶型，充分利用空間，每間房間都有自然採光</p>
-            </div>
-            <div class="feature-card">
-                <h3>🌿 森系風格</h3>
-                <p>融合自然元素的室內設計，打造舒適的居住環境</p>
-            </div>
-            <div class="feature-card">
-                <h3>💰 價格合理</h3>
-                <p>提供多種付款方案，購屋優惠及貸款協助</p>
+            <div class="container">
+                <h1>悅美</h1>
+                <p class="hero-subtitle">市心森系宅 · 高坪效 2-4 房</p>
+                <p class="hero-description">植感森系宅 悅來悅幸福</p>
+                <p class="hero-description">入住心動的家</p>
+                <a href="#contact" class="cta-button">立即預約看房</a>
             </div>
         </section>
 
-        <section class="contact-section">
-            <h2>立即聯繫我們</h2>
-            <div class="contact-items">
-                <div class="contact-item">
-                    <h3>📞 電話</h3>
-                    <p>02-2428-6611</p>
+        <section id="intro">
+            <div class="container">
+                <h2>建案介紹</h2>
+                <div class="intro-content">
+                    <p>買在起漲點，現在就是未來。悅美建案位於基隆市中心，以森系建築風格為主軸，融合自然元素與現代設計。</p>
+                    <p>提供高坪效的 2-4 房格局，讓每一位住戶都能在最安全、最高效的環境中享受生活。</p>
                 </div>
-                <div class="contact-item">
-                    <h3>📧 電子郵件</h3>
-                    <p>info@yuemei.com.tw</p>
-                </div>
-                <div class="contact-item">
-                    <h3>📍 地址</h3>
-                    <p>台北市中心商業區</p>
-                </div>
-                <div class="contact-item">
-                    <h3>🕐 營業時間</h3>
-                    <p>周一至周日 09:00-18:00</p>
+
+                <div class="highlights">
+                    <h3>建案特色</h3>
+                    <div class="highlights-grid">
+                        <div class="highlight-item">
+                            <h4>✓ 市心森系宅</h4>
+                            <p>位於基隆市中心，交通便利，生活機能完善</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>✓ 高坪效設計</h4>
+                            <p>精心規劃的空間配置，讓每一坪都物盡其用</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>✓ 2-4 房選擇</h4>
+                            <p>多種房型可選，滿足不同家庭需求</p>
+                        </div>
+                        <div class="highlight-item">
+                            <h4>✓ 森系建築風格</h4>
+                            <p>融合自然元素，打造舒適宜居的環境</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <a href="tel:0224286611" class="cta-button-white">立即預約看房</a>
+        <section id="highlights">
+            <div class="container">
+                <h2>特色亮點</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌿</div>
+                        <h3>三面採光</h3>
+                        <p>完美高採光格局，享受充足自然光線，打造舒適居住空間。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏠</div>
+                        <h3>房屋雙人床</h3>
+                        <p>寬敞臥室設���，提供舒適的睡眠空間與生活品質。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚿</div>
+                        <h3>衛浴開闊</h3>
+                        <p>獨立衛浴設計，雙衛不用搶廁所，提升生活便利性。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="floorplan">
+            <div class="container">
+                <h2>格局圖</h2>
+                <div class="floor-plan">
+                    <h3>B 棟 39 坪 格局圖</h3>
+                    <div class="floor-plan-content">
+                        <div class="floor-plan-image">
+                            <img src="floorplan.jpg" alt="B棟39坪格局圖" style="width: 100%; height: auto; border-radius: 8px;">
+                        </div>
+                        <div class="floor-plan-details">
+                            <h4 style="color: #2d5016; margin-bottom: 15px;">B 棟 39 坪 - 主要特色</h4>
+                            <ul>
+                                <li>超大景觀陽台</li>
+                                <li>擁抱綠意景觀</li>
+                                <li>房屋雙人床</li>
+                                <li>獨立衛浴房間</li>
+                                <li>二面自然採光</li>
+                                <li>廚房與客廳開放</li>
+                            </ul>
+
+                            <h4 style="color: #2d5016; margin-top: 20px; margin-bottom: 15px;">特色說明</h4>
+                            <p style="color: #666; margin-bottom: 10px;"><strong>三面採光！完美高採光能格局</strong></p>
+                            <p style="color: #666; margin-bottom: 15px;">老公寓格局狹窄、空間擁擠,住得好痛苦!「悅美」完美2-4房格局,三面迎光舒心開闊,通風循環自然健康,享受無拘無束的自在森活。</p>
+
+                            <p style="color: #666; margin-bottom: 10px;"><strong>超高坪效！雙衛不用搶廁所</strong></p>
+                            <p style="color: #666;">超高坪效格局設計·室內空間寬敞·提供高機能·提升生活品質</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="location">
+            <div class="container">
+                <h2>地理位置</h2>
+                <div class="location-section">
+                    <div class="location-content">
+                        <div class="location-map">
+                            <img src="location-map.jpg" alt="地理位置圖" style="width: 100%; height: auto; border-radius: 8px;">
+                        </div>
+                        <div class="location-info">
+                            <h3>繁華簇擁，專屬生活主場</h3>
+                            <p>基隆市中心位置，鄰近捷運站口與天橋·享受便利的交通便捷·讓您輕鬆通勤到台北。</p>
+                            <ul class="location-features">
+                                <li>基隆市中心位置，交通便利</li>
+                                <li>鄰近捷運站口與天橋</li>
+                                <li>周邊商業機能完善</li>
+                                <li>享受森系自然環境</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="contact-section">
+                    <h2>聯絡我們</h2>
+                    <p style="font-size: 18px; margin-bottom: 30px;">歡迎洽詢「悅美」建案詳細資訊</p>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>📞 電話</h3>
+                            <p class="contact-phone">02-2428-6611</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>📍 地��</h3>
+                            <p>基隆市中心 | 仁一號 227 號</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>🕐 營業時間</h3>
+                            <p>周一至周日 09:00-18:00</p>
+                        </div>
+                    </div>
+
+                    <a href="tel:0224286611" class="cta-button-white">立即預約看房</a>
+                </div>
+            </div>
         </section>
     </main>
 
